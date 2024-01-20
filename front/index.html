@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three-Tier App</title>
+</head>
+<body>
+  <h1>Welcome to the Three-Tier App</h1>
+  <button onclick="getData()">Get Data</button>
+  <div id="dataContainer"></div>
+
+  <script>
+    async function getData() {
+      const response = await fetch('/api/data');
+      const data = await response.json();
+      document.getElementById('dataContainer').innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
